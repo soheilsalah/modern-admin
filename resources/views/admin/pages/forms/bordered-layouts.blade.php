@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Forms - Bordered Layouts',
-    'active' => 'forms.bordered-layouts'
+    'active' => 'forms.bordered-layouts',
+    'breadcrumb' => [
+        'title' => 'Forms',
+        'map' => [
+            'Bordered Layouts' => 'active',
+        ],
+    ]
 ])
 
 

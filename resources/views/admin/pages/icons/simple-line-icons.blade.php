@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Simple Line Icons',
-    'active' => 'simple-line-icons'
+    'active' => 'simple-line-icons',
+    'breadcrumb' => [
+        'title' => 'Icons',
+        'map' => [
+            'Simple Line Icons' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

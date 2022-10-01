@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Meteocons Icons',
-    'active' => 'meteocons-icons'
+    'active' => 'meteocons-icons',
+    'breadcrumb' => [
+        'title' => 'Icons',
+        'map' => [
+            'Meteocons Icons' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

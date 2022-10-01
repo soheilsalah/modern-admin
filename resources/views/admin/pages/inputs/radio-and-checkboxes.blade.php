@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
-    'title' => 'Radion & Checkboxes',
-    'active' => 'inputs.radio-and-checkboxes'
+    'title' => 'Radio & Checkboxes',
+    'active' => 'inputs.radio-and-checkboxes',
+    'breadcrumb' => [
+        'title' => 'Inputs',
+        'map' => [
+            'Radio & Checkboxes' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

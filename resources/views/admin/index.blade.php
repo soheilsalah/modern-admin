@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Modern Adminpanel Dashboard',
-    'active' => 'index'
+    'active' => 'index',
+    'breadcrumb' => [
+        'title' => 'Dashboard',
+        'map' => [
+            'Dashnoard' => 'active',
+        ],
+    ]
 ])
 
 @section('content')

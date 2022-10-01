@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Sweet Alerts',
-    'active' => 'sweet-alerts'
+    'active' => 'sweet-alerts',
+    'breadcrumb' => [
+        'title' => 'Components',
+        'map' => [
+            'Sweet Alerts' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Feather Icons',
-    'active' => 'feather-icons'
+    'active' => 'feather-icons',
+    'breadcrumb' => [
+        'title' => 'Icons',
+        'map' => [
+            'Feather Icons' => 'active',
+        ],
+    ]
 ])
 
 @section('content')

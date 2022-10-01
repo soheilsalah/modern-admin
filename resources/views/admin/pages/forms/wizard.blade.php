@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Forms - Wizard',
-    'active' => 'forms.wizard'
+    'active' => 'forms.wizard',
+    'breadcrumb' => [
+        'title' => 'Forms',
+        'map' => [
+            'Wizard Forms' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Line Awesome Icons',
-    'active' => 'line-awesome-icons'
+    'active' => 'line-awesome-icons',
+    'breadcrumb' => [
+        'title' => 'Icons',
+        'map' => [
+            'Line Awesome Icons' => 'active',
+        ],
+    ]
 ])
 
 @section('content')

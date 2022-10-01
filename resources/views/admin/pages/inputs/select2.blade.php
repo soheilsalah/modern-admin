@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Select2 Inputs',
-    'active' => 'inputs.select2'
+    'active' => 'inputs.select2',
+    'breadcrumb' => [
+        'title' => 'Inputs',
+        'map' => [
+            'Select2' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

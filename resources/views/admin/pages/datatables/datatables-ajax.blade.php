@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Datatables AJAX',
-    'active' => 'datatables-ajax'
+    'active' => 'datatables-ajax',
+    'breadcrumb' => [
+        'title' => 'Datatables',
+        'map' => [
+            'Datatables AJAX' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

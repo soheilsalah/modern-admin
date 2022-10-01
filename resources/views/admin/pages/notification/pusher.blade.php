@@ -1,6 +1,9 @@
 @extends('admin.layouts.app',[
     'title' => 'Pusher Notifications',
-    'active' => 'pusher-notification'
+    'active' => 'pusher-notification',
+    'breadcrumb' => [
+        'title' => 'Pusher Notification',
+    ]
 ])
 
 @section('styles')

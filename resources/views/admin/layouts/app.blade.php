@@ -27,32 +27,52 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">2 Columns</h3>
+                @isset($breadcrumb)
+                    <h3 class="content-header-title">
+                        {{ isset($breadcrumb['title']) ? $breadcrumb['title'] : '' }}
+                    </h3>
+                    
+                    @isset($breadcrumb['map'])
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a>
-                            </li>
-                            <li class="breadcrumb-item"><a href="#">Page Layouts</a>
-                            </li>
-                            <li class="breadcrumb-item active">2 Columns
-                            </li>
-                        </ol>
+                            <ol class="breadcrumb">
+                            @foreach($breadcrumb['map'] as $title => $route)
+                                <li class="breadcrumb-item {{ $route == 'active' ? 'active' : ''}}">
+                                    @if(is_array($route))
+                                    {!! $route == 'active' ? $title : '<a href="'.route($route['route'], $route['slug']).'">'.$title.'</a>' !!}
+                                    @else
+                                    {!! $route == 'active' ? $title : '<a href="'.route($route).'">'.$title.'</a>' !!}
+                                    @endif
+                                </li>
+                            @endforeach
+                            </ol>
+                        </div>
+                    </div>
+                    @endisset
+                @endisset
+                </div>
+                @isset($header_right)
+                <div class="content-header-right col-md-6 col-12">
+                    <div class="media width-250 float-right">
+                        <div class="media-body media-right text-right">
+                        @if(isset($header_right['href']))
+                            <a href="{{ isset($header_right['href']['route']) && is_array($header_right['href']['route']) ? route($header_right['href']['route']['route'], $header_right['href']['route']['slugs']) : route($header_right['href']['route']) }}" 
+                                class="btn btn-{{ isset($header_right['href']['color']) ? $header_right['href']['color'] : 'success' }} {{ isset($header_right['href']['bold']) && $header_right['href']['bold'] == true ? 'font-weight-bold' : '' }}"
+                            >
+                                {{ isset($header_right['href']['text']) ? $header_right['href']['text'] : '' }}
+                            </a>
+                        @elseif(isset($header_right['btn']))
+                            <button class="btn btn-{{ isset($header_right['btn']['color']) ? $header_right['btn']['color'] : '' }} text-{{ isset($header_right['btn']['text-color']) ? $header_right['btn']['text-color'] : '' }} {{ isset($header_right['btn']['bold']) && $header_right['btn']['bold'] == true ? 'font-weight-bold' : '' }}" {{ isset($header_right['btn']['id']) ? 'id='.$header_right['btn']['id'] : '' }} {{ isset($header_right['btn']['data']) ? 'data-'.key($header_right['btn']['data']).'='.reset($header_right['btn']['data']) : '' }}>{{ isset($header_right['btn']['text']) ? $header_right['btn']['text'] : '' }}</button>
+                        @endif
                         </div>
                     </div>
                 </div>
-                <div class="content-header-right col-md-6 col-12">
-                    <div class="btn-group float-md-right" role="group" aria-label="Button group with nested dropdown">
-                        <button class="btn btn-info round dropdown-toggle dropdown-menu-right box-shadow-2 px-2" id="btnGroupDrop1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ft-settings icon-left"></i> Settings</button>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1"><a class="dropdown-item" href="card-bootstrap.html">Cards</a><a class="dropdown-item" href="component-buttons-extended.html">Buttons</a></div>
-                    </div>
-                </div>
+                @endisset
             </div>
 
             <div class="main-menu menu-static menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
                 <div class="main-menu-content">
                     @include('admin.includes.navs.sidebar')
-                    
                 </div>
             </div>
 

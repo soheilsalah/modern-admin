@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Toastr',
-    'active' => 'toastr'
+    'active' => 'toastr',
+    'breadcrumb' => [
+        'title' => 'Components',
+        'map' => [
+            'Toastr' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

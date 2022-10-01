@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Datatables API',
-    'active' => 'datatables-api'
+    'active' => 'datatables-api',
+    'breadcrumb' => [
+        'title' => 'Datatables',
+        'map' => [
+            'Datatables API' => 'active',
+        ],
+    ]
 ])
 
 @section('styles')

@@ -1,6 +1,12 @@
 @extends('admin.layouts.app',[
     'title' => 'Forms - Basic Layouts',
-    'active' => 'forms.basic-layouts'
+    'active' => 'forms.basic-layouts',
+    'breadcrumb' => [
+        'title' => 'Forms',
+        'map' => [
+            'Basic Layouts' => 'active',
+        ],
+    ]
 ])
 
 
