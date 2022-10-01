@@ -59,7 +59,7 @@
 
     <!-- Forms -->
     <li class="nav-item">
-        <a href="#"><i class="la la-eye"></i><span class="menu-title">Forms</span></a>
+        <a href="#"><i class="la la-pencil-square-o"></i><span class="menu-title">Forms</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'forms.basic-layouts' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.forms.basic-layouts') }}">Basic Layout Form</a>
@@ -79,7 +79,7 @@
     
     <!-- Inputs -->
     <li class="nav-item">
-        <a href="#"><i class="la la-eye"></i><span class="menu-title">Inputs</span></a>
+        <a href="#"><i class="la la-code"></i><span class="menu-title">Inputs</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'inputs.radio-and-checkboxes' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.inputs.radio-and-checkboxes') }}">Radio & Checkboxes</a>
