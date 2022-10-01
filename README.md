@@ -1,4 +1,4 @@
-<h1>Morder Adminpanel with Laravel</h1>
+<h1>Modern Adminpanel with Laravel</h1>
 
 
 <p>If you want to build any type of admin dashboard like :</p>
