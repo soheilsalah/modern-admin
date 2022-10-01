@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Pages\ComponentPagesController;
+use App\Http\Controllers\Admin\Pages\DatatableController;
 use App\Http\Controllers\Admin\Pages\IconPagesController;
 use App\Http\Controllers\Admin\Pages\NotificationController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,13 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     Route::post('send-notification', [NotificationController::class, 'sendNotification'])->name('send-notification');
     /* End Pusher Notifications Pages */
 
+    /* Start Datatables Pages */
+    Route::get('datatables-api', [DatatableController::class, 'datatablesApi'])->name('datatables-api');
+    Route::get('datatables-ajax', [DatatableController::class, 'datatablesAJAX'])->name('datatables-ajax');
+
+    Route::get('datatables/users', [DatatableController::class, 'Userdatatable'])->name('datatables.users');
+    /* End Datatables Pages */
+    
 
     /* Start Components Pages */
     Route::get('sweet-alerts', [ComponentPagesController::class, 'sweetAlerts'])->name('sweet-alerts');

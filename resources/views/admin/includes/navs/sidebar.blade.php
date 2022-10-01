@@ -34,6 +34,19 @@
     </li>
 
     <li class="nav-item">
+        <a href="#"><i class="la la-table"></i><span class="menu-title" data-i18n="nav.icons.main">Datatables</span></a>
+        <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'datatables-api' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.datatables-api') }}">Datatables API</a>
+            </li>
+
+            <li class="{{ isset($active) && $active == 'datatables-ajax' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.datatables-ajax') }}">Datatables AJAX</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="nav-item">
         <a href="javascript:void(0);">
             <i class="la la-diamond"></i>
             <span class="menu-title">Components</span>
