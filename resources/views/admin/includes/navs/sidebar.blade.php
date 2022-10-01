@@ -9,7 +9,7 @@
     
 
     <li class="nav-item">
-        <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">الايقونات</span></a>
+        <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Icons</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'feather-icons' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.feather-icons') }}">Feather</a>
@@ -29,7 +29,7 @@
     <li class="nav-item {{ isset($active) && $active == 'pusher-notification' ? 'active' : null }}">
         <a class="menu-item" href="{{ route('admin.pusher-notification') }}">
             <i class="la la-bell-o"></i>
-            اشعارات Pusher
+            Pusher Notifications
         </a>
     </li>
 
@@ -42,6 +42,23 @@
 
             <li class="{{ isset($active) && $active == 'datatables-ajax' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.datatables-ajax') }}">Datatables AJAX</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Forms</span></a>
+        <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'forms.basic-layouts' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.forms.basic-layouts') }}">Basic Layout Form</a>
+            </li>
+
+            <li class="{{ isset($active) && $active == 'forms.bordered-layouts' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.forms.bordered-layouts') }}">Bordered Layout Form</a>
+            </li>
+
+            <li class="{{ isset($active) && $active == 'forms.wizard' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.forms.wizard') }}">Wizard Form</a>
             </li>
         </ul>
     </li>

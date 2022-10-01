@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Pages\ComponentPagesController;
 use App\Http\Controllers\Admin\Pages\DatatableController;
+use App\Http\Controllers\Admin\Pages\FormsController;
 use App\Http\Controllers\Admin\Pages\IconPagesController;
 use App\Http\Controllers\Admin\Pages\NotificationController;
 use Illuminate\Support\Facades\Route;
@@ -54,12 +55,20 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     Route::post('send-notification', [NotificationController::class, 'sendNotification'])->name('send-notification');
     /* End Pusher Notifications Pages */
 
+
     /* Start Datatables Pages */
     Route::get('datatables-api', [DatatableController::class, 'datatablesApi'])->name('datatables-api');
     Route::get('datatables-ajax', [DatatableController::class, 'datatablesAJAX'])->name('datatables-ajax');
 
     Route::get('datatables/users', [DatatableController::class, 'Userdatatable'])->name('datatables.users');
     /* End Datatables Pages */
+
+
+    /* Start Form Pages */
+    Route::get('forms/basic-layouts', [FormsController::class, 'basicLayouts'])->name('forms.basic-layouts');
+    Route::get('forms/bordered-layouts', [FormsController::class, 'borderedLayouts'])->name('forms.bordered-layouts');
+    Route::get('forms/wizard', [FormsController::class, 'wizard'])->name('forms.wizard');
+    /* End Form Pages */
     
 
     /* Start Components Pages */
