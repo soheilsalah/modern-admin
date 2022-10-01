@@ -1,13 +1,16 @@
 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
+    <!-- Dashboard -->
     <li class="nav-item {{ isset($active) && $active == 'index' ? 'active' : null }}">
         <a class="menu-item" href="{{ route('admin.index') }}">
             <i class="la la-home"></i>
             الصفحة الرئيسية
         </a>
     </li>
+    <!--/ Dashboard -->
     
 
+    <!-- Icons -->
     <li class="nav-item">
         <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Icons</span></a>
         <ul class="menu-content">
@@ -25,14 +28,20 @@
             </li>
         </ul>
     </li>
+    <!--/ Icons -->
 
+
+    <!-- Pusher Notification -->
     <li class="nav-item {{ isset($active) && $active == 'pusher-notification' ? 'active' : null }}">
         <a class="menu-item" href="{{ route('admin.pusher-notification') }}">
             <i class="la la-bell-o"></i>
             Pusher Notifications
         </a>
     </li>
+    <!--/ Pusher Notification -->
+    
 
+    <!-- Datatables -->
     <li class="nav-item">
         <a href="#"><i class="la la-table"></i><span class="menu-title" data-i18n="nav.icons.main">Datatables</span></a>
         <ul class="menu-content">
@@ -45,7 +54,10 @@
             </li>
         </ul>
     </li>
+    <!--/ Datatables -->
 
+
+    <!-- Forms -->
     <li class="nav-item">
         <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Forms</span></a>
         <ul class="menu-content">
@@ -62,7 +74,10 @@
             </li>
         </ul>
     </li>
+    <!--/ Forms -->
 
+
+    <!-- Components -->
     <li class="nav-item">
         <a href="javascript:void(0);">
             <i class="la la-diamond"></i>
@@ -78,30 +93,37 @@
             </li>
         </ul>
     </li>
+    <!--/ Components -->
 
+
+    <!-- Single Menu -->
     <li class="nav-item">
         <a class="menu-item" href="javascript:void(0);">
             <i class="la la-bars"></i>
-            قائمة منفردة
+            Single Menu
         </a>
     </li>
+    <!--/ Single Menu -->
 
+
+    <!-- Sub-menus -->
     <li class="nav-item">
         <a href="javascript:void(0);">
             <i class="la la-database"></i>
-            <span class="menu-title">قوائم فرعية</span>
+            <span class="menu-title">Submenus</span>
             <span class="badge badge badge-info badge-pill float-right mr-2">3</span>
         </a>
         <ul class="menu-content">
             <li>
-                <a class="menu-item" href="javascript:void(0);">قائمة فرعية 1</a>
+                <a class="menu-item" href="javascript:void(0);">Submenu 1</a>
             </li>
             <li>
-                <a class="menu-item" href="javascript:void(0);">قائمة فرعية 2</a>
+                <a class="menu-item" href="javascript:void(0);">Submenu 2</a>
             </li>
             <li>
-                <a class="menu-item" href="javascript:void(0);">قائمة فرعية 3</a>
+                <a class="menu-item" href="javascript:void(0);">Submenu 3</a>
             </li>
         </ul>
     </li>
+    <!--/ Sub-menus -->
 </ul>
