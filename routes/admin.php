@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Pages\ComponentPagesController;
 use App\Http\Controllers\Admin\Pages\DatatableController;
 use App\Http\Controllers\Admin\Pages\FormsController;
 use App\Http\Controllers\Admin\Pages\IconPagesController;
+use App\Http\Controllers\Admin\Pages\InputController;
 use App\Http\Controllers\Admin\Pages\NotificationController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,6 +69,14 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     Route::get('forms/basic-layouts', [FormsController::class, 'basicLayouts'])->name('forms.basic-layouts');
     Route::get('forms/bordered-layouts', [FormsController::class, 'borderedLayouts'])->name('forms.bordered-layouts');
     Route::get('forms/wizard', [FormsController::class, 'wizard'])->name('forms.wizard');
+    /* End Form Pages */
+
+
+    /* Start Form Pages */
+    Route::get('inputs/radio-and-checkboxes', [InputController::class, 'radioAndChecboxes'])->name('inputs.radio-and-checkboxes');
+    Route::get('inputs/switch', [InputController::class, 'switch'])->name('inputs.switch');
+    Route::get('inputs/select2', [InputController::class, 'select2'])->name('inputs.select2');
+    Route::get('inputs/tags', [InputController::class, 'tags'])->name('inputs.tags');
     /* End Form Pages */
     
 

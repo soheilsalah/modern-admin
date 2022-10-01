@@ -4,7 +4,7 @@
     <li class="nav-item {{ isset($active) && $active == 'index' ? 'active' : null }}">
         <a class="menu-item" href="{{ route('admin.index') }}">
             <i class="la la-home"></i>
-            الصفحة الرئيسية
+            Dashboard
         </a>
     </li>
     <!--/ Dashboard -->
@@ -12,7 +12,7 @@
 
     <!-- Icons -->
     <li class="nav-item">
-        <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Icons</span></a>
+        <a href="#"><i class="la la-eye"></i><span class="menu-title">Icons</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'feather-icons' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.feather-icons') }}">Feather</a>
@@ -43,7 +43,7 @@
 
     <!-- Datatables -->
     <li class="nav-item">
-        <a href="#"><i class="la la-table"></i><span class="menu-title" data-i18n="nav.icons.main">Datatables</span></a>
+        <a href="#"><i class="la la-table"></i><span class="menu-title">Datatables</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'datatables-api' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.datatables-api') }}">Datatables API</a>
@@ -59,7 +59,7 @@
 
     <!-- Forms -->
     <li class="nav-item">
-        <a href="#"><i class="la la-eye"></i><span class="menu-title" data-i18n="nav.icons.main">Forms</span></a>
+        <a href="#"><i class="la la-eye"></i><span class="menu-title">Forms</span></a>
         <ul class="menu-content">
             <li class="{{ isset($active) && $active == 'forms.basic-layouts' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.forms.basic-layouts') }}">Basic Layout Form</a>
@@ -75,6 +75,30 @@
         </ul>
     </li>
     <!--/ Forms -->
+
+    
+    <!-- Inputs -->
+    <li class="nav-item">
+        <a href="#"><i class="la la-eye"></i><span class="menu-title">Inputs</span></a>
+        <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'inputs.radio-and-checkboxes' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.inputs.radio-and-checkboxes') }}">Radio & Checkboxes</a>
+            </li>
+
+            <li class="{{ isset($active) && $active == 'inputs.switch' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.inputs.switch') }}">Switch</a>
+            </li>
+            
+            <li class="{{ isset($active) && $active == 'inputs.select2' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.inputs.select2') }}">Select2</a>
+            </li>
+
+            <li class="{{ isset($active) && $active == 'inputs.tags' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.inputs.tags') }}">Tags</a>
+            </li>
+        </ul>
+    </li>
+    <!--/ Inputs -->
 
 
     <!-- Components -->
