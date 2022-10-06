@@ -37,6 +37,7 @@ class ComposerStaticInit862a7a269000344d2d5989e00542afc4
         '3109cb1a231dcd04bee1f9f620d46975' => __DIR__ . '/..' . '/paragonie/sodium_compat/autoload.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '1aff2f8abd60e952b4bdd52d4f05a132' => __DIR__ . '/../..' . '/app/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -189,11 +190,11 @@ class ComposerStaticInit862a7a269000344d2d5989e00542afc4
         ),
         'Yajra\\DataTables\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src',
-            1 => __DIR__ . '/..' . '/yajra/laravel-datatables-fractal/src',
-            2 => __DIR__ . '/..' . '/yajra/laravel-datatables-editor/src',
+            0 => __DIR__ . '/..' . '/yajra/laravel-datatables-buttons/src',
+            1 => __DIR__ . '/..' . '/yajra/laravel-datatables-editor/src',
+            2 => __DIR__ . '/..' . '/yajra/laravel-datatables-fractal/src',
             3 => __DIR__ . '/..' . '/yajra/laravel-datatables-html/src',
-            4 => __DIR__ . '/..' . '/yajra/laravel-datatables-buttons/src',
+            4 => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src',
         ),
         'Whoops\\' => 
         array (
@@ -550,6 +551,7 @@ class ComposerStaticInit862a7a269000344d2d5989e00542afc4
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\ViewCreator' => __DIR__ . '/../..' . '/app/Console/Commands/ViewCreator.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\NotificationEvent' => __DIR__ . '/../..' . '/app/Events/NotificationEvent.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -562,8 +564,11 @@ class ComposerStaticInit862a7a269000344d2d5989e00542afc4
         'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
         'App\\Http\\Controllers\\Admin\\Pages\\ComponentPagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/ComponentPagesController.php',
         'App\\Http\\Controllers\\Admin\\Pages\\DatatableController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/DatatableController.php',
+        'App\\Http\\Controllers\\Admin\\Pages\\FormsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/FormsController.php',
         'App\\Http\\Controllers\\Admin\\Pages\\IconPagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/IconPagesController.php',
+        'App\\Http\\Controllers\\Admin\\Pages\\InputController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/InputController.php',
         'App\\Http\\Controllers\\Admin\\Pages\\NotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/NotificationController.php',
+        'App\\Http\\Controllers\\Admin\\Pages\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/Pages/UserController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -573,6 +578,7 @@ class ComposerStaticInit862a7a269000344d2d5989e00542afc4
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\Pages\\IconPagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Pages/IconPagesController.php',
+        'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

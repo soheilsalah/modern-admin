@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Pages\FormsController;
 use App\Http\Controllers\Admin\Pages\IconPagesController;
 use App\Http\Controllers\Admin\Pages\InputController;
 use App\Http\Controllers\Admin\Pages\NotificationController;
+use App\Http\Controllers\Admin\Pages\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Dashboard
@@ -41,7 +42,37 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     Route::get('/', function () {
         return view('admin.index');
     })->name('index');
+
+
+    /************************************************** START MY PROJECTS  **************************************************/
     
+    /* Start User CRUD Pages */
+    Route::get('users', [UserController::class, 'index'])->name('users');
+    Route::get('user/show/{slug}', [UserController::class, 'show'])->name('user.show');
+    Route::get('user/create', [UserController::class, 'create'])->name('user.create');
+
+    // ajax call to get all users
+    Route::get('datatables/users', [UserController::class, 'usersDatatable'])->name('datatables.users');
+    // ajax call to create new user
+    Route::post('ajax/user/create', [UserController::class, 'ajaxCreateUser'])->name('ajax.user.create');
+    // ajax call to update user info
+    Route::post('ajax/user/update-user-info', [UserController::class, 'ajaxUpdateUserInfo'])->name('ajax.user.update-user-info');
+    // ajax call to update user password
+    Route::post('ajax/user/update-user-password', [UserController::class, 'ajaxUpdateUserPassword'])->name('ajax.user.update-user-password');
+    // ajax call to delete user
+    Route::post('ajax/user/delete', [UserController::class, 'ajaxDeleteUser'])->name('ajax.user.delete');
+    // ajax call to restote user
+    Route::post('ajax/user/restore', [UserController::class, 'ajaxRestoreUser'])->name('ajax.user.restore');
+    // ajax call to force delete user
+    Route::post('ajax/user/force-delete', [UserController::class, 'ajaxForceDeleteUser'])->name('ajax.user.force-delete');
+    /* End User CRUD Pages */
+
+    /************************************************** End MY PROJECTS    **************************************************/
+    
+
+
+    
+
     /* Start Icon Pages */
     Route::get('feather-icons', [IconPagesController::class, 'featherIcons'])->name('feather-icons');
     Route::get('line-awesome-icons', [IconPagesController::class, 'lineAwesomeIcons'])->name('line-awesome-icons');
@@ -61,7 +92,7 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     Route::get('datatables-api', [DatatableController::class, 'datatablesApi'])->name('datatables-api');
     Route::get('datatables-ajax', [DatatableController::class, 'datatablesAJAX'])->name('datatables-ajax');
 
-    Route::get('datatables/users', [DatatableController::class, 'Userdatatable'])->name('datatables.users');
+    Route::get('datatables/data', [DatatableController::class, 'Userdatatable'])->name('datatables.data');
     /* End Datatables Pages */
 
 

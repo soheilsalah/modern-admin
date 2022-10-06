@@ -19,20 +19,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*\App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
 
-        User::create([
+        /*User::create([
             'name' => 'Soheil Salah',
             'email' => 'soheil.salah.dev@gmail.com',
             'password' => Hash::make('password123'),
             'remember_token' =>  Carbon::now(),
+            'slug' => md5(uniqid()),
         ]);*/
 
-        Admin::firstOrCreate(['email' => 'soheil.salah.dev'],[
+        /*Admin::firstOrCreate(['email' => 'soheil.salah.dev'],[
             'name' => 'الادمن',
             'email' => 'soheil.salah.dev@gmail.com',
             'password' => Hash::make('password123'),
             'remember_token' =>  Carbon::now(),
-        ]);
+        ]);*/
     }
 }

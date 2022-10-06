@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\ViewCreator' => $baseDir . '/app/Console/Commands/ViewCreator.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\NotificationEvent' => $baseDir . '/app/Events/NotificationEvent.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -18,8 +19,11 @@ return array(
     'App\\Http\\Controllers\\Admin\\HomeController' => $baseDir . '/app/Http/Controllers/Admin/HomeController.php',
     'App\\Http\\Controllers\\Admin\\Pages\\ComponentPagesController' => $baseDir . '/app/Http/Controllers/Admin/Pages/ComponentPagesController.php',
     'App\\Http\\Controllers\\Admin\\Pages\\DatatableController' => $baseDir . '/app/Http/Controllers/Admin/Pages/DatatableController.php',
+    'App\\Http\\Controllers\\Admin\\Pages\\FormsController' => $baseDir . '/app/Http/Controllers/Admin/Pages/FormsController.php',
     'App\\Http\\Controllers\\Admin\\Pages\\IconPagesController' => $baseDir . '/app/Http/Controllers/Admin/Pages/IconPagesController.php',
+    'App\\Http\\Controllers\\Admin\\Pages\\InputController' => $baseDir . '/app/Http/Controllers/Admin/Pages/InputController.php',
     'App\\Http\\Controllers\\Admin\\Pages\\NotificationController' => $baseDir . '/app/Http/Controllers/Admin/Pages/NotificationController.php',
+    'App\\Http\\Controllers\\Admin\\Pages\\UserController' => $baseDir . '/app/Http/Controllers/Admin/Pages/UserController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -29,6 +33,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\Pages\\IconPagesController' => $baseDir . '/app/Http/Controllers/Pages/IconPagesController.php',
+    'App\\Http\\Controllers\\TestController' => $baseDir . '/app/Http/Controllers/TestController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

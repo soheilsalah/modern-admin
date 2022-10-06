@@ -9,6 +9,29 @@
     </li>
     <!--/ Dashboard -->
     
+    <li class=" navigation-header">
+        <span data-i18n="nav.category.layouts">My Projects</span>
+        <i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"data-placement="right" data-original-title="Layouts"></i>
+    </li>
+
+    <!-- Users -->
+    <li class="nav-item">
+        <a href="#"><i class="la la-users"></i><span class="menu-title">Users</span></a>
+        <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'users' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.users') }}">All Users</a>
+            </li>
+            <li class="{{ isset($active) && $active == 'user.create' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.user.create') }}">Create New Users</a>
+            </li>
+        </ul>
+    </li>
+    <!--/ Users -->
+
+    <li class=" navigation-header">
+        <span data-i18n="nav.category.layouts">Components & Tools</span>
+        <i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"data-placement="right" data-original-title="Layouts"></i>
+    </li>
 
     <!-- Icons -->
     <li class="nav-item">
