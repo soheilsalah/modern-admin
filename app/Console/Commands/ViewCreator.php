@@ -52,7 +52,7 @@ class ViewCreator extends Command
 
                 $role = ucfirst(strtolower($this->option('role')));
 
-                $namspace = "namespace App\Http\Controllers\\".$role.';';
+                $namspace = "namespace App\Http\Controllers\\".$role.'\\'.dirname($this->option('controller')).';';
 
                 $view_controller = $this->option('path') == null ? strtolower($this->option('role')).'.'.str_replace('/', '.', $this->argument('filename')) : str_replace('/', '.', $this->option('path')).'.'.$$this->argument('filename');
 
@@ -61,7 +61,7 @@ class ViewCreator extends Command
 
             }else{
 
-                $namspace = "namespace App\Http\Controllers;";
+                $namspace = "namespace App\Http\Controllers\\".dirname($this->option('controller')).";";
 
                 $view_controller = $this->option('path') == null ? str_replace('/', '.', $this->argument('filename')) : str_replace('/', '.', $this->option('path')).'.'.$$this->argument('filename');
                 
@@ -90,12 +90,16 @@ class ViewCreator extends Command
 
     private function bladeContent($role = null, $title, $controller = false)
     {
-        $layouts = $role == null ? 'layouts.app' : $role.'layouts.app';
+        $layouts = $role == null ? 'layouts.app' : $role.'.layouts.app';
+
+        $active = str_replace('/', '.', $title);
+
+        $blade_title = ucfirst(basename($title));
 
         return <<<HTML
         @extends('{$layouts}',[
-            'title' => '{$title}',
-            'active' => '{$title}',
+            'title' => '{$blade_title}',
+            'active' => '{$active}',
             'breadcrumb' => [
                 'title' => '{$title}',
                 'map' => [],
@@ -106,9 +110,20 @@ class ViewCreator extends Command
         @endsection
 
         @section('content')
-        <div>
-            <!-- Your Code goes here -->
-        </div>
+        <!-- Description -->
+        <section id="description" class="card">
+            <div class="card-header">
+                <h4 class="card-title">{$blade_title}</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="card-text">
+                        <!-- Write something good -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/ Description -->
         @endsection
 
         @section('scripts')
@@ -128,7 +143,7 @@ class ViewCreator extends Command
 
         class {$controller_name} extends Controller
         {
-            public function private()
+            public function index()
             {
                 \$hello = "Hello World";
 

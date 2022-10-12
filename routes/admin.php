@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Pages\ComponentPagesController;
 use App\Http\Controllers\Admin\Pages\DatatableController;
+use App\Http\Controllers\Admin\Pages\FormbuilderController;
 use App\Http\Controllers\Admin\Pages\FormsController;
 use App\Http\Controllers\Admin\Pages\IconPagesController;
 use App\Http\Controllers\Admin\Pages\InputController;
@@ -47,9 +48,9 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     /************************************************** START MY PROJECTS  **************************************************/
     
     /* Start User CRUD Pages */
-    Route::get('users', [UserController::class, 'index'])->name('users');
-    Route::get('user/show/{slug}', [UserController::class, 'show'])->name('user.show');
-    Route::get('user/create', [UserController::class, 'create'])->name('user.create');
+    Route::get('my-projects/users', [UserController::class, 'index'])->name('users');
+    Route::get('my-projects/user/show/{slug}', [UserController::class, 'show'])->name('user.show');
+    Route::get('my-projects/user/create', [UserController::class, 'create'])->name('user.create');
 
     // ajax call to get all users
     Route::get('datatables/users', [UserController::class, 'usersDatatable'])->name('datatables.users');
@@ -66,6 +67,13 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
     // ajax call to force delete user
     Route::post('ajax/user/force-delete', [UserController::class, 'ajaxForceDeleteUser'])->name('ajax.user.force-delete');
     /* End User CRUD Pages */
+
+
+
+    /* Start Form Builder Pages */
+    Route::get('my-projects/forms', [FormbuilderController::class, 'index'])->name('forms');
+    Route::get('my-projects/form-builder', [FormBuilderController::class, 'create'])->name('form-builder');
+    /* Start Form Builder Pages */
 
     /************************************************** End MY PROJECTS    **************************************************/
     
@@ -89,6 +97,7 @@ Route::group(['middleware' => 'admin.auth:admin'], function (){
 
 
     /* Start Datatables Pages */
+    Route::get('datatables', [DatatableController::class, 'index'])->name('datatables');
     Route::get('datatables-api', [DatatableController::class, 'datatablesApi'])->name('datatables-api');
     Route::get('datatables-ajax', [DatatableController::class, 'datatablesAJAX'])->name('datatables-ajax');
 

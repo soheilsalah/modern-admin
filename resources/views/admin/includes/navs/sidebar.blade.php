@@ -27,6 +27,20 @@
         </ul>
     </li>
     <!--/ Users -->
+    
+    <!-- Form Builder -->
+    <li class="nav-item">
+        <a href="#"><i class="ft-edit"></i><span class="menu-title">Form Builder</span></a>
+        <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'form-builder' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.forms') }}">Forms</a>
+            </li>
+            <li class="{{ isset($active) && $active == 'user.create' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.user.create') }}">Create New Users</a>
+            </li>
+        </ul>
+    </li>
+    <!--/ Form Builder -->
 
     <li class=" navigation-header">
         <span data-i18n="nav.category.layouts">Components & Tools</span>
@@ -68,6 +82,10 @@
     <li class="nav-item">
         <a href="#"><i class="la la-table"></i><span class="menu-title">Datatables</span></a>
         <ul class="menu-content">
+            <li class="{{ isset($active) && $active == 'datatables' ? 'active' : null }}">
+                <a class="menu-item" href="{{ route('admin.datatables') }}">Laravel Datatables</a>
+            </li>
+
             <li class="{{ isset($active) && $active == 'datatables-api' ? 'active' : null }}">
                 <a class="menu-item" href="{{ route('admin.datatables-api') }}">Datatables API</a>
             </li>

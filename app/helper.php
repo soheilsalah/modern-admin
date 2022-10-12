@@ -12,6 +12,10 @@ function controller_path($path = null)
 
 function fileCreator($filename, $content)
 {
+    $dir = dirname($filename);
+
+    !file_exists($dir) ? mkdir($dir, 0777, true) : true;
+
     $myfile = fopen($filename, "w") or die("Unable to open file!");
     fwrite($myfile, $content);
     fclose($myfile);
@@ -41,5 +45,21 @@ function redirectToURL($route)
 
 function _404($layout = null, $title = null, $content = null)
 {
-    echo view('errors.404', compact('layout', 'title', 'content'));
+    return view('errors.404', compact('layout', 'title', 'content'));
+}
+
+function navbarMenus()
+{
+    return [
+        'Main' => ['route' => 'index', 'active' => 'index'],
+        'About Us' => ['route' => 'about', 'active' => 'about'],
+        'Contact Us' => ['route' => 'contact', 'active' => 'contact'],
+        'Other Pages' => [
+            'pages'=> [
+                'Our Policy' => ['route' => 'policy', 'active' => 'policy'],
+                'FAQs' => ['route' => 'faqs', 'active' => 'faqs'],
+                'Terms & Conditions' => ['route' => 'terms-and-conditions', 'active' => 'terms-and-conditions'],
+            ]
+        ]
+    ];
 }

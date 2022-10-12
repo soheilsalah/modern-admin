@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Pages\IconPagesController;
+use App\Http\Controllers\Website\AppController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,12 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'auth'], function (){
+Route::get('/', [AppController::class, 'index'])->name('index');
+Route::get('/about', [AppController::class, 'about'])->name('about');
+Route::get('/contact', [AppController::class, 'contact'])->name('contact');
+Route::get('/policy', [AppController::class, 'policy'])->name('policy');
+Route::get('/faqs', [AppController::class, 'faqs'])->name('faqs');
+Route::get('/terms-and-conditions', [AppController::class, 'terms'])->name('terms-and-conditions');
 
-    Route::get('/', function () {
-        return view('user.index');
-    })->name('index');
-    
+Route::group(['middleware' => 'auth'], function (){
     
     /* Start Icon Pages */
     Route::get('feather-icons', [IconPagesController::class, 'featherIcons'])->name('feather-icons');
@@ -31,6 +34,8 @@ Route::group(['middleware' => 'auth'], function (){
     
 });
 
-Auth::routes();
+Auth::routes([
+    'login' => false,
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
